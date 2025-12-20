@@ -1,0 +1,43 @@
+﻿using SystemsEngineering;
+using System;
+using System.IO;
+using System.Collections.Generic;
+//using Propulsion;
+using CAD;
+using AircraftObjects;
+using MissionsNamespace;
+using Power;
+using Structure;
+using SensorNamespace;
+/*
+using ThermalManagement;
+using Communications;
+using Fluidics;
+using Data;
+using Controls;
+using SoftwareNamespace;
+*/
+
+namespace SystemsEngineering
+{
+    public class AppFile
+    {
+        public AppFile()
+        {
+        }
+
+        public ApplicationClass? Application { get; set; }
+
+        public string Path { get; set; } = string.Empty;
+
+        public string Name { get; set; } = string.Empty;
+
+        public string Extension { get; set; } = string.Empty;
+
+        public string Version { get; set; } = string.Empty;
+
+        public Uri? MyURI { get; set; }
+
+        public List<string> Section { get; set; } = new();
+    }
+}

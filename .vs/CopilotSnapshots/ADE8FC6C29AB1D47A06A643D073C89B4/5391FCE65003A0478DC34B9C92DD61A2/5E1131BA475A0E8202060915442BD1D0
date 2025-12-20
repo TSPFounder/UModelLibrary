@@ -1,0 +1,159 @@
+﻿using System;
+using System.Collections.Generic;
+using Propulsion;
+using Power;
+using Structure;
+using SensorNamespace;
+using UModelLib;
+using UModelLibrary;
+using Data;
+using CAD;
+using Controls;
+using SystemsEngineering;
+using DreamWorldMakerLibrary;
+
+
+namespace SysML
+{
+    public class UModelApp : ApplicationClass
+    {
+        //  *****************************************************************************************
+        //  DECLARATIONS
+        //
+        //  ************************************************************
+        //
+        //  Identification
+        private String _Name;
+
+        //
+        //  Owned & Owning Objects
+        //  
+        //  My UModel Application Object
+        private UModelLib.Application _CurrentApplication;
+        //
+        //  Current UModel Document
+        private UModelDocument _CurrentDocument;
+        
+
+        //  *****************************************************************************************
+
+
+        //  ****************************************************************************************
+        //  INITIALIZATIONS
+        //
+        //  ************************************************************
+
+        //  *****************************************************************************************
+
+
+        //  *****************************************************************************************
+        //  ENUMERATIONS
+        //
+        //  ************************************************************
+
+        //  *****************************************************************************************
+
+
+        //  *****************************************************************************************
+        //  UMODELAPP CONSTRUCTOR
+        //
+        //  ************************************************************
+        public UModelApp(UModelLib.Application MyUModelApp)
+        {
+            this.CurrentApplication = MyUModelApp;
+            
+            IDiagramWindow iActiveDiagram = MyUModelApp.ActiveDocument.ActiveDiagramWindow;
+            IUMLGuiSysMLBlockDefinitionDiagram MySysML_BDD_Interface = (IUMLGuiSysMLBlockDefinitionDiagram) iActiveDiagram.Diagram;
+            
+        }
+        //  *****************************************************************************************
+
+
+        //  *****************************************************************************************
+        //  PROPERTIES
+        //
+        //  ************************************************************
+        //
+        //  Identification
+        //
+        //  Name
+        public string Name
+        {
+            get
+            {
+                return "UModel";
+            }
+        }
+
+        //
+        //  Owned & Owning Objects
+        //
+        //  My UModel Application Object
+        public UModelLib.Application CurrentApplication
+        {
+            set
+            {
+                _CurrentApplication = value;
+            }
+
+            get
+            {
+                return _CurrentApplication;
+            }
+
+        }
+        //
+        //  Documents
+        //
+        //  Current UModel Document
+        public UModelDocument CurrentDocument
+        {
+            set
+            {
+                _CurrentDocument = value;
+            }
+
+            get
+            {
+                return _CurrentDocument;
+            }
+
+        }
+
+        //  **************
+        //  *****************************************************************************************
+
+
+        //  *****************************************************************************************
+        //  METHODS
+        //
+        //  ************************************************************
+        //  ************************************************************
+        //  CREATE A UMODEL DOCUMENT AND MAKE IT CURRENT
+        #region
+        public bool CreateUModelApp()
+        {
+            try
+            {
+                this.CurrentApplication = new UModelLib.Application();
+                this.CurrentApplication.Visible = true;
+                return true;
+            }
+
+            catch
+            {
+                return false;
+            }
+        }
+        #endregion
+        //  *****************************************************************************************
+
+
+        //  *****************************************************************************************
+        //  EVENTS
+        //
+        //  ************************************************************
+
+        //  *****************************************************************************************
+    }
+}
