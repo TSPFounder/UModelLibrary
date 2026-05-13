@@ -59,7 +59,7 @@ namespace SysML
 
             title = string.IsNullOrWhiteSpace(title) ? "Internal Block Diagram" : title.Trim();
 
-            // 1. Create diagram
+            // 1. Create diagram    
             var guiDiagram = (IUMLGuiSysMLInternalBlockDiagram)document.GuiRoot.InsertOwnedDiagramAt(
                 0,
                 document.RootPackage,

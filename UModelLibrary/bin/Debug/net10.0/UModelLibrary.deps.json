@@ -13,7 +13,7 @@
           "CommonObjectsLibrary": "1.0.0.0",
           "MathematicsLibrary": "1.0.0.0",
           "SysML_Library": "1.0.0.0",
-          "SystemsEngineeringLibrary": "1.0.0.0"
+          "SystemsEngineeringLibrary": "0.0.0.0"
         },
         "runtime": {
           "UModelLibrary.dll": {}
@@ -59,17 +59,9 @@
           }
         }
       },
-      "SystemsEngineeringLibrary/1.0.0.0": {
+      "SystemsEngineeringLibrary/0.0.0.0": {
         "runtime": {
           "SystemsEngineeringLibrary.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "SE_Library/1.0.0.0": {
-        "runtime": {
-          "SE_Library.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -108,12 +100,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "SystemsEngineeringLibrary/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "SE_Library/1.0.0.0": {
+    "SystemsEngineeringLibrary/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
