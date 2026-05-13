@@ -6,16 +6,11 @@ using Applications;
 
 namespace SysML
 {
-    public class UModelApp //: ApplicationClass
+    public class UModelApp()
     {
-        public UModelApp(UModelLib.Application uModelApp)
-        {
-            CurrentApplication = uModelApp;
-        }
-
         public string Name => "UModel";
 
-        public UModelLib.Application? CurrentApplication { get; set; }
+        public UModelLib.Application? CurrentApplication { get; set; } 
 
         public UModelDocument? CurrentDocument { get; set; }
 

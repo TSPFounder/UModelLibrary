@@ -1,19 +1,20 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using UModelLib;
 using CAD;
-using Applications;
+
+
 
 namespace SysML
 {
-    public class UModelDiagram(UModelDocument myDoc)
+    public class Umodel_Parametric_Diagram(UModelDocument myDoc) : UModelDiagram(myDoc)
     {
         //  *****************************************************************************************
         //  DECLARATIONS
         //
         //  ************************************************************
         #region
-        //  
+        //
         //  Identification
 
         //
@@ -40,24 +41,13 @@ namespace SysML
         //
         //  ************************************************************
         #region
-        public enum SysML_DiagramTypeEnum
-        {
-            Package = 0,
-            BDD,
-            IBD,
-            Parametric,
-            Activity,
-            StateMachine,
-            Sequence,
-            UseCase,
-            Requirements
-        }
+
         #endregion
         //  *****************************************************************************************
 
 
         //  *****************************************************************************************
-        //  UMODELDIAGRAM CONSTRUCTOR
+        //  UMODEL_PARAMETRIC_DIAGRAM CONSTRUCTOR
         //
         //  ************************************************************
         #region
@@ -70,14 +60,7 @@ namespace SysML
         //
         //  ************************************************************
         #region
-        //
-        //  Owned & Owning Objects
-        //
-        //  My UModel App
-        public UModelDocument MyDoc { get; } = myDoc ?? throw new ArgumentNullException(nameof(myDoc));
-        //
-        //  My Diagram Window Object
-        public IDiagramWindow? MyActiveDiagram { get; } = myDoc?.MyUModelDocumentObj?.ActiveDiagramWindow;
+        public UModelLib.IUMLGuiSysMLParametricDiagram? MySysML_Parametric_Interface { get; set; }
         #endregion
         //  *****************************************************************************************
 
@@ -87,7 +70,10 @@ namespace SysML
         //
         //  ************************************************************
         #region
+        public void CreateParametricDiagram(string title)
+        {
 
+        }
         #endregion
         //  *****************************************************************************************
 

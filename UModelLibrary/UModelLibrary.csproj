@@ -29,19 +29,19 @@
       <HintPath>..\..\..\ApplicationLibrary\ApplicationLibrary\ApplicationLibrary\bin\Debug\net10.0\ApplicationLibrary.dll</HintPath>
     </Reference>
     <Reference Include="CAD_Library">
-      <HintPath>..\..\..\CAD_Library\CAD_Library\CAD_Library\bin\Debug\net10.0\CAD_Library.dll</HintPath>
+      <HintPath>..\..\..\CAD_Library\CAD_Library\bin\Debug\net10.0\CAD_Library.dll</HintPath>
     </Reference>
     <Reference Include="CommonObjectsLibrary">
       <HintPath>..\..\..\CommonObjectsLibrary\CommonObjectsLibrary\CommonObjectsLibrary\bin\Debug\net10.0\CommonObjectsLibrary.dll</HintPath>
     </Reference>
     <Reference Include="MathematicsLibrary">
-      <HintPath>..\..\..\MathematicsLibrary\MathematicsLibrary\MathematicsLibrary\bin\Debug\net10.0\MathematicsLibrary.dll</HintPath>
+      <HintPath>..\..\..\MathematicsLibrary\MathematicsLibrary\bin\Debug\net10.0\MathematicsLibrary.dll</HintPath>
     </Reference>
     <Reference Include="SysML_Library">
       <HintPath>..\..\..\SysML_Library\SysML_Library\SysML_Library\bin\Debug\net10.0\SysML_Library.dll</HintPath>
     </Reference>
     <Reference Include="SystemsEngineeringLibrary">
-      <HintPath>..\..\..\SystemsEngineeringLibrary\SystemsEngineeringLibrary\SystemsEngineeringLibrary\bin\Debug\net10.0\SystemsEngineeringLibrary.dll</HintPath>
+      <HintPath>..\..\..\SystemsEngineeringLibrary\SystemsEngineeringLibrary\bin\Debug\net10.0\SystemsEngineeringLibrary.dll</HintPath>
     </Reference>
   </ItemGroup>
 

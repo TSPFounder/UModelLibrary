@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;using UModelLib;
+﻿using Applications;
 using CAD;
-using Applications;
-
+using System;
+using System.Collections.Generic;
+using UModelLib;
+using UModelLib;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace SysML
 {
-    public class UModelDocument
+    public class UModelDocument : AppDocument
     {
         //  *****************************************************************************************
         //  DECLARATIONS
@@ -21,16 +23,6 @@ namespace SysML
 
         //
         //  Owned & Owning Objects
-        //
-        //  My UModel App
-        private UModelApp _MyUModelApp;
-        //
-        //  UModel Document Object
-        private UModelLib.IDocument _MyUModelDocumentObj;
-        //
-        //  UModel Diagrams
-        private UModelDiagram _CurrentUModelDiagram;
-        private List<UModelDiagram> _MyUModelDiagrams;
         #endregion
         //  *****************************************************************************************
 
@@ -94,8 +86,65 @@ namespace SysML
         //  *****************************************************************************************
         //  METHODS
         //
-        //  ************************************************************
+        //  **************************************8cdvf x**********************
         #region
+        public void CreateAircraftSysMLBDD()
+        {
+            
+            IApplication uiApp = new UModelLib.Application();
+            uiApp.Visible = true;
+
+            UModelLib.Document document = uiApp.ActiveDocument;
+            if (document == null) document = uiApp.ActiveDocument;
+
+            UModelLib.IUMLGuiSysMLBlockDefinitionDiagram BDD_Diagram = (UModelLib.IUMLGuiSysMLBlockDefinitionDiagram)document.GuiRoot.InsertOwnedDiagramAt(0, document.RootPackage, "SysML Block Definition Diagram");
+
+            DiagramWindow wnd = document.OpenDiagram(BDD_Diagram);
+
+
+            IUMLPackage sysmlRootPackage = (IUMLPackage)document.RootPackage;
+
+            
+
+            sysmlRootPackage.InsertPackagedElementAt(1,"Package");
+            sysmlRootPackage.Name = "AircraftDesign";
+
+            IUMLGuiNodeLink aircraft = BDD_Diagram.AddUMLElement("Block", 60, 20);
+            IUMLGuiNodeLink wing = BDD_Diagram.AddUMLElement("Block", 10, 30);
+
+            IUMLGuiLineLink line = wnd.Diagram.AddUMLLineElement("Association", aircraft, wing);
+
+            aircraft.SetRect(60, 20, 120, 80);
+
+            //IUMLAssociation association = BDD_Diagram.AddUMLAssociation(aircraft, wing);
+            
+
+            Console.WriteLine("SysML BDD for Aircraft created successfully.");
+        }
+
+        // Helper method to apply the <<block>> stereotype required for SysML
+        private void ApplyBlockStereotype(IUMLElement element)
+        {
+            // SysML profiles must be loaded in the UModel project for this to work
+            //element.ApplyStereotype("block");
+        }
+
+
+        public static void reverseEngineerAndCreateSequenceDiagram(IApplication application, IUMLOperation operation)
+        {
+            GenerateSequenceDiagramDlg dialog = application.Dialogs.GenerateSequenceDiagramDlg;
+
+            // set some options
+            dialog.ShowEmptyCombinedFragments = false;
+            dialog.UseDedicatedLineForStaticCalls = true;
+            dialog.ShowCodeOfMessagesDisplayedDirectlyBelow = true;
+            dialog.ShowCodeInNotes = true;
+
+            dialog.ShowDialog = true; // set this to true if you want the dialog to be displayed
+
+            // generated the sequence diagram now
+            application.ActiveDocument.GenerateSequenceDiagram(dialog, operation);
+        }
 
         #endregion
         //  *****************************************************************************************
